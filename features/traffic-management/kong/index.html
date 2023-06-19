@@ -8,20 +8,20 @@
       
       
       
-        <link rel="canonical" href="https://argo-rollouts.readthedocs.io/features/traffic-management/google-cloud/">
+        <link rel="canonical" href="https://argo-rollouts.readthedocs.io/features/traffic-management/kong/">
       
       
-        <link rel="prev" href="../alb/">
+        <link rel="prev" href="../istio/">
       
       
-        <link rel="next" href="../istio/">
+        <link rel="next" href="../nginx/">
       
       <link rel="icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.16">
     
     
       
-        <title>Google Cloud - Argo Rollouts - Kubernetes Progressive Delivery Controller</title>
+        <title>Kong - Argo Rollouts - Kubernetes Progressive Delivery Controller</title>
       
     
     
@@ -87,7 +87,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#google-cloud" class="md-skip">
+        <a href="#kong-ingress" class="md-skip">
           Skip to content
         </a>
       
@@ -121,7 +121,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Google Cloud
+              Kong
             
           </span>
         </div>
@@ -812,21 +812,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../google-cloud/" class="md-nav__link">
         Google Cloud
       </a>
-      
     </li>
   
 
@@ -850,11 +840,21 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../kong/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Kong
       </a>
+      
     </li>
   
 
@@ -2281,23 +2281,24 @@
   
 
 
-<h1 id="google-cloud">Google Cloud<a class="headerlink" href="#google-cloud" title="Permanent link">&para;</a></h1>
+<h1 id="kong-ingress">Kong Ingress<a class="headerlink" href="#kong-ingress" title="Permanent link">&para;</a></h1>
 <p>With the introduction of the Kubernetes Gateway API it is now possible to use Argo Rollouts with all compliant implementations that support it. The integration is available with the <a href="https://github.com/argoproj-labs/rollouts-plugin-trafficrouter-gatewayapi/">Argo Rollouts Gateway API plugin</a> currently hosted in Argo Labs.</p>
 <p>Useful resources:</p>
 <ul>
 <li><a href="https://gateway-api.sigs.k8s.io/">The Gateway API specification</a></li>
-<li><a href="https://cloud.google.com/kubernetes-engine/docs/concepts/gateway-api">Support of the Gateway API in Google Cloud</a></li>
+<li><a href="https://docs.konghq.com/kubernetes-ingress-controller/latest/concepts/gateway-api/">Support of the Gateway API in Kong</a></li>
 <li><a href="../plugins/">Argo Rollouts Plugin capabilities</a> </li>
 <li><a href="https://github.com/argoproj-labs/rollouts-plugin-trafficrouter-gatewayapi">Plugin for the Gateway API</a></li>
 </ul>
 <p>The process involves the following steps:</p>
 <ol>
-<li>Creating a Kubernetes cluster with support for the Gateway API in Google Cloud</li>
-<li>Creating a Load balancer that is managed by the Gateway API in Google Cloud</li>
+<li>Installing the Gateway API CRDs in your cluster</li>
+<li>Installing Kong and enabling the Gateway API support feature</li>
+<li>Creating a GatewayClass and Gateway resources </li>
 <li>Installing Argo Rollouts + gateway API plugin in the cluster</li>
 <li>Defining a Rollout that takes advantage of the plugin</li>
 </ol>
-<p>For a full application that includes all manifests see the <a href="https://github.com/argoproj-labs/rollouts-plugin-trafficrouter-gatewayapi/tree/main/examples/google-cloud">plugin example</a>.</p>
+<p>For a full application that includes all manifests see the <a href="https://github.com/argoproj-labs/rollouts-plugin-trafficrouter-gatewayapi/tree/main/examples/kong">plugin example</a>.</p>
 
 
   

@@ -17,7 +17,7 @@
         <link rel="next" href="../hpa-support/">
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.15">
+      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.16">
     
     
       
@@ -871,6 +871,20 @@
     <li class="md-nav__item">
       <a href="../traffic-management/istio/" class="md-nav__link">
         Istio
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../traffic-management/kong/" class="md-nav__link">
+        Kong
       </a>
     </li>
   
@@ -2464,6 +2478,18 @@
 <span class="w">        </span><span class="nt">preferredDuringSchedulingIgnoredDuringExecution</span><span class="p">:</span>
 <span class="w">          </span><span class="nt">weight</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span><span class="w"> </span><span class="c1"># Between 1 - 100</span>
 
+<span class="w">      </span><span class="c1"># activeMetadata will be merged and updated in-place into the ReplicaSet&#39;s spec.template.metadata</span>
+<span class="w">      </span><span class="c1"># of the active pods. +optional</span>
+<span class="w">      </span><span class="nt">activeMetadata</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">labels</span><span class="p">:</span>
+<span class="w">          </span><span class="nt">role</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">active</span>
+
+<span class="w">      </span><span class="c1"># Metadata which will be attached to the preview pods only during their preview phase.</span>
+<span class="w">      </span><span class="c1"># +optional</span>
+<span class="w">      </span><span class="nt">previewMetadata</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">labels</span><span class="p">:</span>
+<span class="w">          </span><span class="nt">role</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">preview</span>
+
 <span class="w">    </span><span class="c1"># Canary update strategy</span>
 <span class="w">    </span><span class="nt">canary</span><span class="p">:</span>
 
@@ -2789,9 +2815,11 @@
     <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.b4d07000.min.js"></script>
+      <script src="../../assets/javascripts/bundle.a51614de.min.js"></script>
       
-        <script src="../../assets/versions.js"></script>
+        
+          <script src="../../assets/versions.js"></script>
+        
       
     
   </body>
